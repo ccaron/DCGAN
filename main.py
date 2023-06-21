@@ -100,7 +100,7 @@ def generate_and_save_images(model, epoch, test_input):
         plt.axis("off")
 
     plt.savefig("image_at_epoch_{:04d}.png".format(epoch))
-    plt.show()
+    # plt.show()
 
 
 # Display a single image using the epoch number
@@ -180,17 +180,17 @@ def main() -> int:
                 train_step(image_batch)
 
             # Produce images for the GIF as you go
-            display.clear_output(wait=True)
+            # display.clear_output(wait=True)
             generate_and_save_images(generator, epoch + 1, seed)
 
             # Save the model every 15 epochs
-            if (epoch + 1) % 15 == 0:
-                checkpoint.save(file_prefix=checkpoint_prefix)
+            # if (epoch + 1) % 15 == 0:
+            #     checkpoint.save(file_prefix=checkpoint_prefix)
 
             print("Time for epoch {} is {} sec".format(epoch + 1, time.time() - start))
 
         # Generate after the final epoch
-        display.clear_output(wait=True)
+        # display.clear_output(wait=True)
         generate_and_save_images(generator, epochs, seed)
 
     train(train_dataset, EPOCHS)
