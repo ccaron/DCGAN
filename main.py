@@ -135,7 +135,7 @@ def main() -> int:
     discriminator = make_discriminator_model()
     decision = discriminator(generated_image)
 
-    EPOCHS = 1
+    EPOCHS = 50
     noise_dim = 100
     num_examples_to_generate = 16
 
